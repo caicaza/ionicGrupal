@@ -4,8 +4,48 @@ import { HomePage } from './home.page';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'inicio',
     component: HomePage,
+    children: [
+      {
+        path: 'platillos',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/comida/comida.module').then( m => m.ComidaPageModule)
+          }
+        ],
+      },
+      {
+        path: 'bebidas',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/bebidas/bebidas.module').then( m => m.BebidasPageModule)
+          }
+        ],
+      },
+      {
+        path: 'postres',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/postres/postres.module').then( m => m.PostresPageModule)
+          }
+        ],
+      },
+      {
+        path: '',
+        redirectTo: '/inicio/platillos',
+        pathMatch: 'full'
+      }
+
+    ]
+  },
+  {
+    path: '',
+    redirectTo: '/inicio/platillos',
+    pathMatch: 'full'
   }
 ];
 
