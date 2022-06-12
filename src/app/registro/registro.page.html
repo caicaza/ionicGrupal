@@ -5,28 +5,44 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-title>Registro</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
-        <ion-item>
-          <ion-label position="floating">Nombre</ion-label>
-          <ion-input formControlName="nombre"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Contraseña</ion-label>
-          <ion-input formControlName="password" type="password"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating">Confirmar contraseña</ion-label>
-          <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
-        </ion-item>
-        <br>
-        <ion-button (click)="guardar()">Registrarse
-        </ion-button>
-      </form>
-    </ion-card-content>
-  </ion-card>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col  size="12"  >
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Registro</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
+              <ion-item>
+                <ion-label position="floating">Nombre</ion-label>
+                <ion-input formControlName="nombre"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input formControlName="password" type="password"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="floating">Confirmar contraseña</ion-label>
+                <ion-input formControlName="confirmacionPassword" type="password"></ion-input>
+              </ion-item>
+              <br>
+              <ion-button (click)="guardar()">Registrarse
+              </ion-button>
+            </form>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid  [fixed]="true">
+    <ion-row>
+      <ion-col>
+        <p>¿Ya tienes una cuenta?</p>
+        <ion-button [routerLink]="['/inicio/login']"> Loguearse </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>
