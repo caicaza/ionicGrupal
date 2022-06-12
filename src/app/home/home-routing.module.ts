@@ -35,6 +35,24 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'cuenta',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/cuenta/cuenta.module').then( m => m.CuentaPageModule)
+          }
+        ],
+      },
+      {
+        path: 'login',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../pages/login/login.module').then( m => m.LoginPageModule)
+          }
+        ],
+      },
+      {
         path: '',
         redirectTo: '/inicio/platillos',
         pathMatch: 'full'

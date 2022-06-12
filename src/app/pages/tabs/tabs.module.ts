@@ -9,13 +9,12 @@ import { TabsPage } from './tabs.page';
 
 
 
-
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        TabsPageRoutingModule
+        TabsPageRoutingModule,
     ],
     exports: [
         TabsPage

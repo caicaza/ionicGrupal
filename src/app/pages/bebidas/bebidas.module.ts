@@ -9,12 +9,15 @@ import { BebidasPageRoutingModule } from './bebidas-routing.module';
 import { BebidasPage } from './bebidas.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    BebidasPageRoutingModule
-  ],
-  declarations: [BebidasPage]
+    imports: [
+        CommonModule,
+        FormsModule,
+        IonicModule,
+        BebidasPageRoutingModule
+    ],
+    exports: [
+        BebidasPage
+    ],
+    declarations: [BebidasPage]
 })
 export class BebidasPageModule {}
