@@ -53,6 +53,15 @@ const routes: Routes = [
         ],
       },
       {
+        path: 'registro',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../registro/registro.module').then( m => m.RegistroPageModule)
+          }
+        ],
+      },
+      {
         path: '',
         redirectTo: '/inicio/platillos',
         pathMatch: 'full'
